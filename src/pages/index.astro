@@ -10,20 +10,34 @@ import { Icon } from 'astro-icon/components';
 		<img src={image.src} alt="Lose inches" />
 	</section>
 	<section class="featured-items">
-		<div class="card">
+		<a href="./bodywraps/" class="card">
+			
 			<Icon name="iconoir:waist" size={50} class="icon"/>
 			<h2>body wraps</h2>
 			<p>Smooth Cellulite, slim inches, improve skin tone, and benefit the entire body!</p>
-		</div>
-		<div class="card">
+		
+		</a>
+
+		<a href="./eurowave/" class="card">
+
 			<Icon name="icon-park-outline:waistline" size={50} class="icon"/>
 			<h2>Eurowave</h2>
 			<p>The effortless workout with instant specific inch loss!</p>
-		</div>
-		<div class="card">
+		</a>
+
+		<a href="./bootcamp/" class="card">
+
 			<Icon name="mdi:weight-lifter" size={50} class="icon"/>
 			<h2>bootcamp</h2>
 			<p>Diet & exercise not working fast enough for you? Let us help!</p>
-		</div>
+
+		</a>
 	</section>
 </Baselayout>
+
+<style>
+	.card, a:visited {
+		color: var(--text);
+		text-decoration: none;
+	}
+</style>
