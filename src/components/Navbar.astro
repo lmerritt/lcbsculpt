@@ -1,0 +1,152 @@
+---
+import { Icon } from 'astro-icon/components';
+const navLinks = [
+    {
+        name: 'body wrap',
+        url: '/bodywraps/',
+        style: 'transparent',
+    },
+    {
+        name: 'eurowave',
+        url: '/eurowave/',
+        style: 'transparent',
+    },
+    {
+        name: 'bootcamp',
+        url: '/bootcamp/',
+        style: 'transparent',
+    },
+    {
+        name: 'contact',
+        url: '/contact/',
+        style: 'transparent',
+    },
+]
+---
+<div class="nav-container">
+    <a href="/"><Icon name="logo" class="logo" role="navigation" width={200} height={77}/></a>
+
+    <nav class="primary-navigation">
+        <button id="menu-btn" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open mobile nav">
+            <Icon name="mdi:menu" size={25}/>
+        </button>
+        <ul class="nav-links" role="list">
+            {navLinks.map(link => (
+                <li>
+                    <a href={link.url} class={`btn btn--${link.style} nav-link`}>{link.name}</a>
+                </li>
+            ))
+            }
+        </ul>
+    </nav>
+</div>
+
+<style>
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: var(--size-fluid-2);
+    }
+
+    .nav-links,
+    .primary-navigation {
+        display: flex;
+        align-items: center;
+        gap: var(--size-5);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        transform: translateY(-200%);
+        position: absolute;
+        background-color: var(--bkg);
+        top: var(--size-fluid-7);
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: var(--size-3);
+        border-bottom: 2px solid var(--accent);
+    }
+    
+    .nav-links a {
+        color: var(--text);
+        font-size: var(--font-size-2);
+        padding-block: var(--size-2);
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+
+    .logo {
+    color: var(--text);
+}
+
+    .nav-container a,
+    .nav-container a:visited, {
+        color: var(--text);
+    }
+    
+    .nav-container a:hover,
+    .nav-container a:focus {
+        color: var(--accent);
+    }
+
+    li,
+    .nav-link {
+        width: 100%;
+        display: block;
+        font-size: var(--font-size-1);
+    }
+
+    #menu-btn {
+        color: var(--text);
+        text-decoration: none;
+        padding: var(--size-2) var(--size-fluid-4);
+        border-radius: var(--radius-1);
+        cursor: pointer;
+    }
+
+    #menu-btn {
+        background-color: transparent;
+        border: none;
+        display: grid;
+        place-items: center;
+        padding-inline: var(--size-2);
+    }
+
+    #menu-btn[aria-expanded="true"] + .nav-links {
+	transform: translateY(0);
+    }
+
+    @media (width > 42em) {
+    
+	#menu-btn {
+		display: none;
+	}
+	.nav-links {
+		flex-direction: row;
+		position: static;
+		transform: translateY(0);
+		border: none;
+		padding: 0;
+		inset: initial;
+		background-color: transparent;
+        gap: var(--size-6);;
+	}
+	li,
+	.nav-link {
+		width: initial;
+		font-size: var(--font-size-0);
+	}
+    }
+
+
+</style>
+
+<script>
+    const navBtn = document.querySelector('#menu-btn');
+    navBtn.addEventListener('click', () => {
+        navBtn.setAttribute('aria-expanded', navBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+    })
+</script>

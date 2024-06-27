@@ -1,0 +1,99 @@
+---
+import Baselayout from "../../layouts/Baselayout.astro";
+import wrap from '../../assets/wrap-sm.png';
+import cellulite from '../../assets/cellulite5.png';
+---
+
+<Baselayout>
+    <h2 class="secondary-header">body contour wraps</h2>
+   
+    <section>
+        
+        <div class="contour-grid">
+            <div class="first">
+
+                <h3>Body Wraps That Benefit the entire body</h3>
+            
+                <p>Unwrap a new you. Lose inches and smooth unsightly cellulite with the unique M’lis body wrap system.</p>
+    
+                <p>Cellulite and uneven fat deposits are signs of an unhealthy system. M’lis body wraps are based in science that understands how to address waste trapped in the connective tissues below the skin to reveal an all new you.</p>
+
+            </div>
+
+            <div class="second">
+                <img src={wrap.src} alt="Body Wrap" />
+            </div>
+        </div>
+        
+
+        <h3>Smooth embarrassing cellulite</h3>
+
+        <p>Cellulite is frustrating. Its impacts people regardless of their weight or size. Adding to this frustration is the myth that weight loss is the solution for smoothing these uneven deposits underneath the skin.</p>
+
+        <p>M’lis contour wraps have been proven to reduce cellulite for over 30 years. Each treatment targets the true source of cellulite by cleansing the tissues where cellulite is trapped. Yes, trapped.</p>
+
+        <div class="contour-grid">
+            <div>
+                <h3>Where is your cellulite trapped?</h3>
+
+                <ul>
+                    <li>Hips and Buttocks</li>
+                    <li>Upper Thighs and Knees</li>
+                    <li>Abdomen</li>
+                    <li>Upper Arms</li>
+                </ul>
+            </div>
+            
+                <img class="center" src={cellulite.src} alt="Cellulite" />
+
+        </div>
+
+    
+            <p>These areas generally have poor circulation which leads to clogged toxins and waste materials being harder to remove.</p>
+            
+    </section>  
+</Baselayout>
+
+<style>
+
+    ul {
+        margin-top: var(--size-2);
+        grid-area: main;
+    }
+
+    li {
+        font-size: var(--size-4);
+        font-weight: var(--font-weight-2);
+    }
+
+
+    .contour-grid {
+        display: grid;
+        gap: var(--size-5);
+        justify-items: center;
+    }
+
+    @media (width > 50em) {
+        .contour-grid {
+          grid-auto-flow: column;
+          grid-columns: 2fr 1fr;
+          gap: var(--size-8);
+          justify-content:space-between
+        }
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .flex .center {
+        align-content: center;
+    }
+
+    .second {
+        margin-bottom: var(--size-2);
+    }
+</style>

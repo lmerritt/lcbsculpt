@@ -1,0 +1,32 @@
+---
+import Baselayout from "../../layouts/Baselayout.astro";
+---
+
+<Baselayout>
+    <h2 class="secondary-header">contact</h2>
+
+    <section class="location">
+        <p>We are located inside Faces Ect.</p>
+        <address>
+            906 W. Main St.<br />
+            League City, TX 77573<br />
+            <a href="tel:+2815543223">(281) 554 3223</a>
+        </address>
+
+        <p>Ask for Rhonda Smith<br />
+            Liscensed Aesthetician & Laser Tech<br />
+
+        </p>
+    </section>
+</Baselayout>
+
+<style>
+    .location {
+        padding-top: var(--size-fluid-3);
+        display: grid;
+        place-content: center;
+    }
+    address {
+        margin-bottom: var(--size-3);
+    }
+</style>
