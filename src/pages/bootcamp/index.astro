@@ -1,11 +1,111 @@
 ---
 import Baselayout from "../../layouts/Baselayout.astro";
+import stomachBefore from '../../assets/StomachBefore.png';
+import stomachAfter from '../../assets/StomachAfter.png';
+import stomachBefore1 from '../../assets/StomachBefore1.png';
+import stomachAfter1 from '../../assets/StomachAfter1.png';
+import sideBefore from '../../assets/sideBefore.png';
+import sideAfter from '../../assets/sideAfter.png';
+import frontAfter from '../../assets/frontAfter.png';
+import frontBefore from '../../assets/frontBefore.png';
 ---
 
 <Baselayout  title="Bootcamp">
     <h2 class="secondary-header">bootcamp</h2>
 
     <p>You too can acheive similar eye-catching results in just 3 sessions a week.</p>
+    <section class="before-after">
+        <h3 class="center">Fat Melt + Eurowave/muscle</h3>
 
+        <div class="ba-columns">
+
+            <div class="before">
+                <h4>Before</h4>
+                 <img src={stomachBefore.src} alt="Stomach Before Bootcamp" />
+            </div>
+           
+            
+            <div class="after">
+                <h4>After</h4>
+                <img src={stomachAfter.src} alt="Stomach After Bootcamp" />
+            </div>
+            
+        </div>
+
+        <div class="ba-columns">
+
+            <div class="before">
+                <h4>Before</h4>
+                 <img src={stomachBefore1.src} alt="Stomach Before Bootcamp" />
+            </div>
+           
+            
+            <div class="after">
+                <h4>After</h4>
+                <img src={stomachAfter1.src} alt="Stomach After Bootcamp" />
+            </div>
+            
+        </div>
+
+        <div class="ba-columns">
+
+            <div class="before">
+                <h4>Before</h4>
+                 <img src={sideBefore.src} alt="Side Before Bootcamp" />
+            </div>
+           
+            
+            <div class="after">
+                <h4>After</h4>
+                <img src={sideAfter.src} alt="Side After Bootcamp" />
+            </div>
+            
+        </div>
+
+        <div class="ba-columns">
+
+            <div class="before">
+                <h4>Before</h4>
+                 <img src={frontBefore.src} alt="Front Before Bootcamp" />
+            </div>
+           
+            
+            <div class="after">
+                <h4>After</h4>
+                <img src={frontAfter.src} alt="Front After Bootcamp" />
+            </div>
+            
+        </div>
+
+        
+    </section>
     
 </Baselayout>
+
+<style>
+   h3 {
+        max-width: 100%;
+    }
+    h4 {
+        text-align: center;
+        font-weight: var(--font-weight-3);
+    }
+
+    .before-after {
+        margin-bottom: var(--size-3);
+    }
+
+    .ba-columns {
+        display: grid;
+        gap: var(--size-3);
+        justify-items: center;
+        padding-bottom: var(--size-3);
+    }
+
+    @media (width > 50em) {
+        .ba-columns {
+          grid-auto-flow: column;
+          grid-auto-columns: 1fr;
+        }
+    }
+</style>
