@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+const {title} = Astro.props;
 import Navbar from '../components/Navbar.astro'
 ---
 
@@ -10,7 +11,7 @@ import Navbar from '../components/Navbar.astro'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>League City Body Sculpt</title>
+		<title>League City Body Sculpt | {title}</title>
 	</head>
 	<body>
         <header class="content-grid">
