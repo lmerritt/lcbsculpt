@@ -100,35 +100,3 @@ p {
       grid-auto-columns: 1fr;
     }
 }
-
-.featured-items {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    gap: var(--size-8);
-    padding-block: var(--size-fluid-5);
-}
-
-.card {
-    flex-basis: var(--size-content-1);
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-3);
-    background: var(--surface-3);
-    border: 1px solid var(--surface-1);
-    padding: var(--size-4);
-    border-radius: var(--radius-3);
-    box-shadow: var(--shadow-2);
-  }
-
-  .card .icon {
-    color: var(--accent);
-  }
-
-  .card h2 {
-    font-size: var(--size-fluid-3);
-    font-weight: var(--font-weight-4);
-    text-transform: capitalize;
-  }
-
- 

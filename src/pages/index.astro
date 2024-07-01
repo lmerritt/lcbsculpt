@@ -10,7 +10,7 @@ import { Icon } from 'astro-icon/components';
 		<img src={image.src} alt="Lose inches" />
 	</section>
 	<section class="featured-items">
-		<a href="./bodywraps/" class="card">
+		<a href="./bodywraps/" class="card one">
 			
 			<Icon name="iconoir:waist" size={50} class="icon"/>
 			<h2>body wraps</h2>
@@ -36,8 +36,39 @@ import { Icon } from 'astro-icon/components';
 </Baselayout>
 
 <style>
+
+.featured-items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: var(--size-8);
+    padding-block: var(--size-fluid-5);
+}
+
+.card {
+    flex-basis: var(--size-content-1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+    background: var(--gray-3);
+    border: 1px solid var(--gray-1);
+    padding: var(--size-4);
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-2);
+  }
+
+  .card .icon {
+    color: var(--accent);
+  }
+
+  .card h2 {
+    font-size: var(--size-fluid-3);
+    font-weight: var(--font-weight-4);
+    text-transform: capitalize;
+  }
 	.card, a:visited {
 		color: var(--text);
 		text-decoration: none;
 	}
+
 </style>
