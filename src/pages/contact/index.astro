@@ -19,25 +19,28 @@ import Baselayout from "../../layouts/Baselayout.astro";
         </p>
     </section>
 
-    <!-- <section>
-        <form action="POST">
-            <div class="form-group">
+    <section>
+        <form name="contact" method="POST" data-netlify="true">
+            <div class="form-group with-error-field">
                 <label for="name">Name</label>
-                <input type="text" required title="please enter your name">
+                <input placeholder="your name" type="text" name="name" id="name" pattern="[A-Za-z ]{1,32}" title="please enter your name">
+                <span class="error">Name required</span>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" required title="must be a valid email address">
+            <div class="form-group with-error-field">
+                <label for="email">Email Address</label>
+                <input placeholder="name@example.com" type="email" name="email" id="email" title="please enter a valid email address">
+                <span class="error">Email address required</span>
             </div>
-            <div class="form-group">
+            <div class="form-group with-error-field">
                 <label for="message">Message</label>
-                <textarea name="message" id="message"></textarea>
+                <textarea name="message" id="message" title="please enter a message"></textarea>
+                <span class="error">Message required</span>
             </div>
             <div>
                 <button type="submit">Submit</button>
             </div>
         </form>
-    </section> -->
+    </section>
 </Baselayout>
 
 <style>
@@ -54,21 +57,70 @@ import Baselayout from "../../layouts/Baselayout.astro";
         margin-bottom: var(--size-3);
     }
 
-    /* form {
+    form {
+        margin-inline: auto;
         display: grid;
-        place-content: center;
         gap: var(--size-3);
-        
+        padding: var(--size-2);
+        max-inline-size: var(--size-content-2);
     }
-    
+
+    input,textarea {
+        background-color: var(--bkg);
+        border: solid 1px var(--text);
+        border-radius: var(--radius-2);
+        padding: var(--size-2);
+        font: inherit;
+        font-size: var(--size-3);
+    }
+
+    input:not(:focus):invalid {
+        color: var(--accent);
+        border: 1px solid var(--accent);
+    }
+
+    textarea {
+        min-height: var(--size-11);
+    }
+
+    button {
+        background: var(--accent);
+        color: var(--bkg);
+        font: inherit;
+        padding-inline: var(--size-8);
+        padding-block: var(--size-2);
+        border-radius: var(--size-2);
+    }
+
+    button:hover,button:focus-visible {
+        box-shadow: var(--shadow-3);
+    }
+   
     .form-group {
         display: grid;
         gap: var(--size-1);
     }
 
-    input,textarea {
-        background-color: var(--bkg);
-        border: solid 2px var(--text);
-        border-radius: var(--radius-2);
-    } */
+    .form-group > .error {
+        grid-row: 1;
+        grid-column: 2;
+        text-align: end;
+        color: var(--accent);
+        display: none;
+    }
+
+    .form-group > :not(:focus):invalid + .error {
+        display: block;
+    }
+
+    .form-group.with-error-field {
+        grid-template-columns: 1fr max-content;
+    }
+
+    .form-group.with-error-field > input,
+    .form-group.with-error-field > textarea {
+        grid-column: 1 / -1;
+    }
+
+
 </style>
