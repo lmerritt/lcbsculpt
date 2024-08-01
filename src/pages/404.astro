@@ -1,0 +1,27 @@
+---
+import Baselayout from "../layouts/Baselayout.astro";
+
+---
+
+<Baselayout title="404">
+    <section class="grid">
+        <h2 class="secondary-header">The page you requested wasn't found.</h2>
+    </section>
+</Baselayout>
+
+<style>
+    .grid {
+        display: grid;
+        height: 70vh;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+    h2 {
+        max-width: var(--size-header-2);
+        @media (width >= 574px) {
+            max-width: var(--size-header-3);
+        }
+    }
+
+</style>
