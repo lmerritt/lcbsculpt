@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.leaguecitybodysculpt.com/',
+  site: 'https://leaguecitybodysculpt.com/',
   integrations: [icon(), sitemap({
     lastmod: new Date(),
   }),
