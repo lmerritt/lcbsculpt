@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 const {title} = Astro.props;
+const {descrip} = Astro.props;
 import Navbar from '../components/Navbar.astro'
 ---
 
@@ -9,9 +10,9 @@ import Navbar from '../components/Navbar.astro'
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>League City Body Sculpt {title}</title>
+		<title>{title} League City Body Sculpt</title>
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="description" content="Achieve a slimmer, more contoured figure with Mil's revolutionary body wraps. EuroWave helps break down fat cells and minimize the look of cellulite for a smoother, more toned physique. Uncover a total body transformation at League City Body Sculpt." />
+		<meta name="description" content={descrip} />
 	</head>
 	<body>
         <header class="content-grid">
