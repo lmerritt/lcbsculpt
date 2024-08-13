@@ -30,7 +30,7 @@
   
 /* Color */
 :root {
-    --bkg: var(--stone-1);
+    --bkg: var(--stone-0);
     --text: var(--stone-11);
     --accent: var(--indigo-4);
 }
