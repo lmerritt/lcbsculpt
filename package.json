@@ -22,7 +22,7 @@
     "@iconify-json/iconoir": "^1.1.44",
     "@iconify-json/mdi": "^1.1.66",
     "autoprefixer": "^10.4.19",
-    "open-props": "^1.7.4",
+    "open-props": "^1.7.5",
     "postcss-jit-props": "^1.0.14",
     "postcss-preset-env": "^9.5.14"
   }
