@@ -67,6 +67,11 @@ p {
   font-weight: var(--font-weight-2);
 }
 
+p::selection {
+  background: var(--accent);
+  color: var(--bkg);
+}
+
 
 .cta  {
     font-size: var(--font-size-5);
